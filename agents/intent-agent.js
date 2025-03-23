@@ -5,7 +5,7 @@
  * Agent that recognizes and tracks user's intent when using YouTube
  * to customize the experience accordingly
  */
-class IntentAgent {
+export class IntentAgent {
     constructor() {
       // User's recognized intents
       this.userIntents = {

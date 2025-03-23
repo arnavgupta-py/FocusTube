@@ -5,7 +5,7 @@
  * Agent that builds a knowledge graph of topics based on user's 
  * viewing history and suggests content to expand their understanding
  */
-class DiscoveryAgent {
+export class DiscoveryAgent {
     constructor() {
       // User's topic exploration graph
       this.topicGraph = {

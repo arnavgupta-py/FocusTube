@@ -8,7 +8,7 @@
  * Main FocusTube Agent that orchestrates all sub-agents
  * and manages the overall intelligent assistant behavior
  */
-class FocusTubeAgent {
+export class FocusTubeAgent {
     constructor() {
       // Agent system state
       this.isActive = false;

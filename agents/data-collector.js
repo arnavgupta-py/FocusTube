@@ -5,7 +5,7 @@
  * Data collection utilities for agent learning
  * with privacy safeguards and controls
  */
-class AgentDataCollector {
+export class AgentDataCollector {
     constructor() {
       this.privacyLevel = 'moderate'; // 'minimal', 'moderate', 'full'
       this.collectionEnabled = true;

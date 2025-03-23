@@ -5,7 +5,7 @@
  * Agent that learns about content preferences from user engagement
  * and applies this knowledge to rank search results
  */
-class ContentLearningAgent {
+export class ContentLearningAgent {
     constructor() {
       // Store user engagement with different videos
       this.videoEngagementHistory = {};

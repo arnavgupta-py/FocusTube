@@ -1,5 +1,7 @@
 // FocusTube Extension - Background Script
 
+import { FocusTubeAgent } from './agents/index.js';
+
 // Global agent instance
 let focusTubeAgent = null;
 
@@ -57,6 +59,7 @@ async function initializeAgent() {
     console.error('Agent initialization error:', error);
   }
 }
+
 
 // Listen for extension icon clicks
 chrome.action.onClicked.addListener((tab) => {

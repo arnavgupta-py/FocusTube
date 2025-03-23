@@ -5,7 +5,7 @@
  * Agent that monitors and manages YouTube usage time
  * to prevent excessive consumption and encourage healthy habits
  */
-class TimeManagementAgent {
+export class TimeManagementAgent {
     constructor() {
       // User's usage patterns
       this.usagePatterns = {
