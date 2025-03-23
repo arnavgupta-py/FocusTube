@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Focus</title>
+  <style>
+    body {
+      font-family: Roboto, Arial, sans-serif;
+      width: 300px;
+      padding: 16px;
+      margin: 0;
+      color: #212121;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 16px;
+    }
+    
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ff0000;
+      margin-right: auto;
+    }
+    
+    .toggle-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+      background-color: #4285f4;
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .setting-label {
+      font-size: 14px;
+    }
+    
+    #max-results {
+      width: 60px;
+      padding: 4px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+    }
+    
+    .button {
+      padding: 8px 12px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+      background-color: #e6e6e6;
+    }
+    
+    .button.primary {
+      background-color: #4285f4;
+      color: white;
+      border-color: #4285f4;
+    }
+    
+    .button.primary:hover {
+      background-color: #3367d6;
+    }
+    
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">YouTube Focus</div>
+    <div class="toggle-container">
+      <label class="toggle">
+        <input type="checkbox" id="extension-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="settings">
+    <div class="setting-row">
+      <span class="setting-label">Maximum search results</span>
+      <input type="number" id="max-results" min="5" max="50" value="20">
+    </div>
+    
+    <div class="setting-row">
+      <span class="setting-label">Hide video comments</span>
+      <label class="toggle">
+        <input type="checkbox" id="hide-comments" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="setting-row">
+      <span class="setting-label">Hide recommendations</span>
+      <label class="toggle">
+        <input type="checkbox" id="hide-recommendations" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="setting-row">
+      <span class="setting-label">Use custom search page</span>
+      <label class="toggle">
+        <input type="checkbox" id="redirect-search" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="buttons">
+    <button class="button" id="open-search">Open Search</button>
+    <button class="button primary" id="save-settings">Save Settings</button>
+  </div>
+  
+  <div class="footer">
+    YouTube Focus - A distraction-free experience
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

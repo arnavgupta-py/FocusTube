@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Focus - Search</title>
+  <link rel="stylesheet" href="search.css">
+</head>
+<body>
+  <header>
+    <div class="logo">YouTube Focus</div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search for videos...">
+      <button id="search-button">Search</button>
+    </div>
+    <div class="settings-icon">⚙️</div>
+  </header>
+
+  <main>
+    <div class="search-info">
+      <h1 id="search-term">Search Results</h1>
+      <p id="result-count">Showing <span id="result-number">0</span> focused results</p>
+    </div>
+
+    <div class="results-container" id="results-list">
+      <!-- Search results will be dynamically added here -->
+      <div class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Loading focused content...</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="settings-panel" id="settings-panel">
+    <div class="settings-header">
+      <h2>Extension Settings</h2>
+      <span class="close-settings">×</span>
+    </div>
+    <div class="settings-content">
+      <div class="setting-item">
+        <label for="max-results">Maximum results to show</label>
+        <input type="number" id="max-results" min="5" max="50" value="20">
+      </div>
+      <div class="setting-item">
+        <label for="hide-comments">Hide video comments</label>
+        <input type="checkbox" id="hide-comments" checked>
+      </div>
+      <div class="setting-item">
+        <label for="hide-recommendations">Hide video recommendations</label>
+        <input type="checkbox" id="hide-recommendations" checked>
+      </div>
+      <div class="setting-item">
+        <label for="redirect-search">Redirect YouTube searches to this interface</label>
+        <input type="checkbox" id="redirect-search" checked>
+      </div>
+    </div>
+    <div class="settings-footer">
+      <button id="save-settings">Save Settings</button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+  <footer>
+    <p>YouTube Focus - A distraction-free YouTube experience</p>
+  </footer>
+
+  <script src="../utils/api-handler.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>
